@@ -25,6 +25,7 @@ const isDev = process.env.NODE_ENV !== "production";
 // Simple request logger to help debug CORS/network issues
 app.use((req, res, next) => {
   console.log("Incoming ->", req.method, req.url, "Origin:", req.headers.origin || "<no-origin>");
+  console.log("Cookies:",req.cookies || {});
   next();
 });
 
